@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "./ui/button";
 
 export default function Projects() {
   return (
@@ -34,10 +36,13 @@ export default function Projects() {
                   Looking for rustic or boho wedding decor? Watch me turn three
                   1x4 pine boards into a...
                 </p>
-                <div className="flex justify-start pt-4">
+                <div className="flex justify-start pt-8">
                   <Link
                     href="#"
-                    className="px-8 py-2 border-2 border-black rounded-full font-lg semibold text-"
+                    className={cn(
+                      buttonVariants({ variant: "primary" }),
+                      "min-w-[12rem]"
+                    )}
                   >
                     See More
                   </Link>

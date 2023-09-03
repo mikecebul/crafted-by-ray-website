@@ -26,7 +26,7 @@ export function DesktopNav() {
             <Link href={item.href} legacyBehavior passHref>
               <NavigationMenuLink
                 className={cn(buttonVariants({ variant: "navLink" }), {
-                  "border-b-2 border-b-brand border-opacity-100 rounded-b-none text-":
+                  "border-b-2 border-b-amber-900 border-opacity-100 rounded-b-none text-":
                     isActiveRoute(currentPathName as string, item.href),
                 })}
               >

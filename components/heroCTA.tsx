@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "./ui/button";
 
 export const HeroCTA = () => {
   return (
@@ -31,12 +33,16 @@ export const HeroCTA = () => {
       </svg>
 
       <p className="pt-4">
-        A small family business in <span className="block sm:inline">Charlevoix, MI.</span>
+        A small family business in{" "}
+        <span className="block sm:inline">Charlevoix, MI.</span>
       </p>
       <div className="pt-10 pb-2">
         <Link
           href="#"
-          className="px-8 py-2 text-xl font-semibold rounded-full bg-amber-900 text-amber-50"
+          className={cn(
+            buttonVariants({ variant: "primary" }),
+            "min-w-[12rem]"
+          )}
         >
           See My Work
         </Link>

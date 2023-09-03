@@ -20,6 +20,7 @@ const buttonVariants = cva(
         navLink:
           "hover:bg-accent/20 hover:text-accent-foreground text-lg font-semibold tracking-wider",
         link: "text-primary underline-offset-4 hover:underline",
+        primary: "text-xl font-semibold rounded-full bg-amber-900 text-amber-50",
       },
       size: {
         default: "h-10 px-4 py-2",
