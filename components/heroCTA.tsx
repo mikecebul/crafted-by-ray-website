@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -6,13 +6,13 @@ import { motion } from "framer-motion";
 export const HeroCTA = () => {
   return (
     <motion.div
-      className="relative px-8 pt-12 pb-16"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8, delay: 0.1 }}
+      className="relative px-8 pt-12 pb-16 sm: container"
     >
       <h1 className="text-4xl font-bold">
-        Custom<span className="block">Woodworking</span>
+        Custom <span className="block sm:inline">Woodworking</span>
       </h1>
       <svg
         className="absolute top-[84px] left-[66px]"
@@ -31,7 +31,7 @@ export const HeroCTA = () => {
       </svg>
 
       <p className="pt-4">
-        A small family business in<span className="block">Charlevoix, MI.</span>
+        A small family business in <span className="block sm:inline">Charlevoix, MI.</span>
       </p>
       <div className="pt-10 pb-2">
         <Link
@@ -42,5 +42,5 @@ export const HeroCTA = () => {
         </Link>
       </div>
     </motion.div>
-  )
+  );
 };
