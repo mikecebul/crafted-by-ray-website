@@ -5,7 +5,7 @@ import MobileNav from "./mobileNav";
 
 const Navbar = () => {
   return (
-      <nav className="flex justify-between">
+      <nav className="flex justify-between p-4">
         <div>
           <Logo />
         </div>
