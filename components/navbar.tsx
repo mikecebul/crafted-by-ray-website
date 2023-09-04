@@ -8,7 +8,7 @@ import { DesktopNav } from "./desktopNav";
 const Navbar = () => {
   const mobile = useMediaQuery("(max-width: 640px)");
   return (
-    <nav className="flex justify-between items-center p-4 sm:container">
+    <nav className="flex items-start justify-between px-4 pt-8 sm:container">
       <div>
         <Logo />
       </div>

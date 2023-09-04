@@ -11,13 +11,13 @@ export const HeroCTA = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8, delay: 0.1 }}
-      className="relative px-8 pt-12 pb-16 sm: container"
+      className="relative md:max-w-md"
     >
-      <h1 className="text-4xl font-bold">
+      <h1 className="text-4xl font-bold tracking-tight md:text-6xl">
         Custom <span className="block sm:inline">Woodworking</span>
       </h1>
       <svg
-        className="absolute top-[84px] left-[66px]"
+        className="absolute top-[35px] left-[25px] md:top-[55px] md:left-[58px]"
         width="78"
         height="10"
         viewBox="0 0 78 10"
@@ -32,7 +32,7 @@ export const HeroCTA = () => {
         />
       </svg>
 
-      <p className="pt-4">
+      <p className="pt-4 md:text-xl">
         A small family business in{" "}
         <span className="block sm:inline">Charlevoix, MI.</span>
       </p>

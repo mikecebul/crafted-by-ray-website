@@ -46,7 +46,7 @@ const formSchema = z.object({
 
 type ContactFormValues = z.infer<typeof formSchema>;
 
-export default function ContactForm() {
+export default function HeroContactForm() {
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(formSchema),
     mode: "onChange",
@@ -112,39 +112,35 @@ export default function ContactForm() {
 
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-          <CardContent className="space-y-8">
-            <FormField
-              control={form.control}
-              name="fullName"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Name</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Jane Doe" {...field} />
-                  </FormControl>
-                  <FormDescription>
-                    Please enter your first and last name.
-                  </FormDescription>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="phoneNumber"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Phone</FormLabel>
-                  <FormControl>
-                    <Input placeholder="555-555-5555" {...field} />
-                  </FormControl>
-                  <FormDescription>
-                    Please enter your Phone number.
-                  </FormDescription>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+          <CardContent className="space-y-4">
+            <div className="flex gap-4">
+              <FormField
+                control={form.control}
+                name="fullName"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Name</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Jane Doe" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="phoneNumber"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Phone</FormLabel>
+                    <FormControl>
+                      <Input placeholder="555-555-5555" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
             <FormField
               control={form.control}
               name="email"
@@ -154,9 +150,6 @@ export default function ContactForm() {
                   <FormControl>
                     <Input placeholder="jane@gmail.com" {...field} />
                   </FormControl>
-                  <FormDescription>
-                    Please enter your email address.
-                  </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
@@ -173,9 +166,6 @@ export default function ContactForm() {
                       {...field}
                     />
                   </FormControl>
-                  <FormDescription>
-                    Please enter what you&apos;re looking to have made for you.
-                  </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}

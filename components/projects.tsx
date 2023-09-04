@@ -15,10 +15,10 @@ export default function Projects() {
       transition={{ duration: 0.8, delay: 0.3 }}
       className="sm:container"
     >
-      <h2 className="pt-16 text-3xl font-semibold text-center">
+      <h2 className="pt-16 pb-8 text-3xl font-semibold text-center md:font-bold md:text-4xl">
         YouTube Videos
       </h2>
-      <div className="flex flex-col max-w-2xl space-y-8 py-4">
+      <div className="flex flex-col items-center gap-8 py-4 md:flex-row max-w-7xl">
         {Array(3)
           .fill(null)
           .map((project, index) => (
@@ -30,7 +30,7 @@ export default function Projects() {
                 alt="YouTube video preview"
                 className="object-cover w-full rounded-t-lg"
               />
-              <div className="p-8 bg-amber-200 rounded-b-lg">
+              <div className="p-8 rounded-b-lg bg-amber-200">
                 <p className="text-2xl font-semibold">DIY Wooden Card Box</p>
                 <p className="pt-4 text-lg font-light">
                   Looking for rustic or boho wedding decor? Watch me turn three
