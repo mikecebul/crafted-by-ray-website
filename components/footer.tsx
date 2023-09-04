@@ -12,19 +12,9 @@ import {
   User,
   Youtube,
 } from "lucide-react";
-import { useForm } from "react-hook-form";
+import ContactForm from "./contactForm";
 
 export function Footer() {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = (data: any) => console.log(data);
-
-  console.log(watch("example"));
-
   return (
     <div className="mt-16">
       <svg
@@ -65,123 +55,8 @@ export function Footer() {
             </li>
           </div>
         </div>
-        {/* Contact Form */}
-        <div className="px-4 pb-4">
-          <h3 className="pb-4 text-4xl font-semibold">
-            Contact me with an idea!
-          </h3>
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-            <div className="flex flex-col items-center justify-center space-y-2">
-              <div className="w-full">
-                <label
-                  htmlFor="name"
-                  className="block pb-2 text-lg font-medium"
-                >
-                  Name
-                </label>
-                <div className="relative">
-                  <User
-                    className="absolute text-gray-500 -translate-y-1/2 top-1/2 left-3"
-                    size={20}
-                  />
-                  <input
-                    className="w-full py-2 pl-12 rounded"
-                    placeholder="Jane Doe"
-                    type="text"
-                    {...register("name", { required: true })}
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="flex flex-col items-center justify-center space-y-2">
-              <div className="w-full">
-                <label
-                  className="block pb-2 text-lg font-medium"
-                  htmlFor="phone"
-                >
-                  Phone
-                </label>
-                <div className="relative">
-                  <Phone
-                    className="absolute text-gray-500 -translate-y-1/2 top-1/2 left-3"
-                    size={20}
-                  />
-                  <input
-                    className="w-full py-2 pl-12 rounded"
-                    placeholder="231-555-5555"
-                    type="tel"
-                    {...register("phone", {
-                      required: true,
-                      minLength: 6,
-                      maxLength: 12,
-                    })}
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="flex flex-col items-center justify-center space-y-2">
-              <div className="w-full">
-                <label
-                  className="block pb-2 text-lg font-medium"
-                  htmlFor="email"
-                >
-                  Email
-                </label>
-                <div className="relative">
-                  <Mail
-                    className="absolute text-gray-500 -translate-y-1/2 top-1/2 left-3"
-                    size={20}
-                  />
-                  <input
-                    className="w-full py-2 pl-12 rounded"
-                    placeholder="jane@gmail.com"
-                    type="email"
-                    {...register("email", {
-                      required: true,
-                      pattern: /^\S+@\S+$/i,
-                    })}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-col items-center justify-center space-y-2">
-              <div className="w-full">
-                <label
-                  className="block pb-2 text-lg font-medium"
-                  htmlFor="message"
-                >
-                  Message
-                </label>
-                <div className="relative">
-                  <Edit
-                    className="absolute text-gray-500 -translate-y-1/2 top-[20px] left-3"
-                    size={20}
-                  />
-                  <textarea
-                    className="w-full py-2 pl-12 rounded"
-                    rows={5}
-                    placeholder="Type your message"
-                    {...register("message", {
-                      required: true,
-                      minLength: 3,
-                      maxLength: 1000,
-                    })}
-                  />
-                </div>
-              </div>
-            </div>
-
-            {errors.exampleRequired && <span>This field is required</span>}
-
-            <button
-              type="submit"
-              className="px-8 py-2 rounded-full bg-amber-900 text-white"
-            >
-              Submit
-            </button>
-          </form>
+        <div className="max-w-lg px-4 pb-4 sm:container">
+          <ContactForm />
         </div>
       </div>
     </div>
